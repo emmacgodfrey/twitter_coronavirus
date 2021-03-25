@@ -1,5 +1,7 @@
 # Coronavirus twitter analysis
 
+Brief explanation: In this project, I used Map-Reduce to analyze geotagged tweets mentioning coronavirus. More specifically, I first took pre-partitioned zip files each containing a day's worth of geotagged tweets and analyzed each day's zip file using my `map.py` file. `map.py ` extracts the important statistics regarding the number of times a given hashtag (e.g. #covid19) was mentioned in a given language for each day. Additionally, `map.py` outputs a file with the country count; this file details the number of hashtag mentions for a given country for a given day. Finally, I use `reduce.py` to combine all of the output files from the `map.py` into 2 files: 1 file for language counts and 1 file for country counts. To better separate the output, I then divided up the reduced files based on hashtag. In other words, for each hashtag, I have a file containing the top 10 language counts and a file containing the top 10 country counts.  
+
 You will scan all geotagged tweets sent in 2020 to monitor for the spread of the coronavirus on social media.
 
 **Due date:** 
